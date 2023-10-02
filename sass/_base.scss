@@ -1,24 +1,32 @@
 // COLOR VARIABLES
-$color-primary: #c69963;
-$color-primary-dark: #b28451;
+// $color-primary: #c69963;
+// $color-primary-dark: #b28451;
 
-$color-secondary: #101d2c;
+// $color-secondary: #101d2c;
 
-$color-grey-light-1: #f9f7f6;
-$color-grey-light-2: #aaa;
+// $color-grey-dark-1: #54483a;
+// $color-grey-dark-2: #6d5d4b;
 
-$color-grey-dark-1: #54483a;
-$color-grey-dark-2: #6d5d4b;
+// COLOR VARIABLES
+
+$color-grey-light-1: #eaeae7;
+$color-grey-light-2: #fefefe;
+$color-grey-light-3: #9aa5ae;
+
+$color-pink: #ccc2bb;
+$color-pink-2: #cbcccb;
+
+$color-grey-dark-1: #4a4f55;
+$color-grey-dark-2: #898a8e;
+
+$color-black-1: #11171a;
 
 // FONT VARIABLES
-$font-primary: "Nunito", sans-serif;
-$font-display: "Josefin Sans", sans-serif;
+$font-title: "Cormorant Garamond", serif;
+$font-body: "Montserrat", sans-serif;
 
-// RESPONSIVE BREAKPOINTS
-$bp-largest: 75em; //1200px
-$bp-large: 62.5em; //1000px
-$bp-medium: 50em; //800px
-$bp-small: 37.5em; //600px
+//MARGIN
+$margin-bottom-title: 7rem;
 
 *,
 *::before,
@@ -31,42 +39,58 @@ $bp-small: 37.5em; //600px
 html {
   font-size: 62.5%; //1rem = 10px
   box-sizing: border-box;
-
-  @media only screen and (max-width: $bp-largest) {
-    font-size: 50%;
-  }
 }
 
 body {
-  font-family: $font-primary;
-  color: $color-grey-dark-2;
-  font-weight: 300;
-  line-height: 1.6;
+  background-color: $color-grey-light-1;
+  font-family: $font-body;
+  font-weight: 200;
+  line-height: 1.7;
+  font-size: 1.2rem;
 }
+
+//OVERALL SECTIONS LAYOUT WITH CSS GRID
 
 .container {
   display: grid;
-  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-rows: 100vh repeat(4, min-content);
   grid-template-columns:
-    [sidebar-start] 8rem [sidebar-end full-start]
-    minmax(6rem, 1fr)
-    [center-start]
-    repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
-    [center-end]
-    minmax(6rem, 1fr) [full-end];
+    [ml-start] 15% [ml-end center-start]
+    repeat(3, [col-start] 1fr [col-end])
+    [center-end mr-start] 15% [mr-end];
 
-  @media only screen and (max-width: $bp-large) {
-    grid-template-rows: 6rem 80vh;
-    grid-template-columns:
-      [full-start]
-      minmax(6rem, 1fr)
-      [center-start]
-      repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
-      [center-end]
-      minmax(6rem, 1fr) [full-end];
+  grid-row-gap: 10rem;
+}
+
+//BUTTON
+
+.btn {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    padding: 0.5rem 3rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+
+    cursor: pointer;
+    transition: all 0.2s;
   }
 
-  @media only screen and (max-width: $bp-medium) {
-    grid-template-rows: 6rem calc(100vh-6rem);
+  &--light {
+    border: 1px solid #fff;
+    color: #fff;
+  }
+
+  &--dark {
+    border: 1px solid $color-grey-dark-1;
+    color: $color-grey-dark-1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
   }
 }
