@@ -1,6 +1,10 @@
 .projects {
   grid-column: center-start / center-end;
 
+  @media only screen and(max-width: $bp-sm) {
+    grid-column: ml-start / mr-end;
+  }
+
   display: grid;
   grid-gap: $margin-bottom-title;
 
@@ -14,6 +18,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-gap: 3.5rem;
+
+    @media only screen and(max-width: $bp-sm) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
@@ -28,6 +36,10 @@
   grid-template-rows: repeat(3, min-content) 4rem;
   grid-gap: 1.5rem;
   justify-items: center;
+
+  @media only screen and(max-width: $bp-sm) {
+    padding: 6rem 15rem;
+  }
 
   &__icon {
     height: 4.5rem;

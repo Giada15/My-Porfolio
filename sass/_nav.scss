@@ -16,6 +16,11 @@
     padding-right: 8rem;
 
     list-style: none;
+
+    @media only screen and(max-width: $bp-md) {
+      justify-content: center;
+      padding-right: 0;
+    }
   }
 
   &__item {
@@ -38,15 +43,4 @@
       }
     }
   }
-
-  //   &::after {
-  //     content: "";
-  //     display: flex;
-  //     margin-left: auto;
-  //     margin-right: 8rem;
-
-  //     height: 1px;
-  //     width: 60rem;
-  //     background-color: $color-grey-dark-1;
-  //   }
 }

@@ -4,6 +4,10 @@
   display: grid;
   grid-template-columns: calc(100% / 3) 1fr;
 
+  @media only screen and(max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+
   // grid-template-rows: 85% 1fr;
 
   //HEADER LEFT
@@ -12,9 +16,14 @@
     background-color: $color-pink;
 
     display: grid;
-    grid-template-columns: 12rem 1fr 12rem;
+    grid-template-columns: 15% 1fr 15%;
     grid-template-rows: 8rem 1fr repeat(4, min-content) 1fr;
     grid-row-gap: 1.5rem;
+
+    @media only screen and(max-width: $bp-md) {
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   &__title {
@@ -31,6 +40,8 @@
     grid-row: 4/5;
 
     font-size: 1.3rem;
+
+    font-weight: 300;
   }
 
   &__btn {
@@ -38,6 +49,11 @@
     grid-row: 5/6;
 
     margin-top: 2rem;
+    justify-self: start;
+
+    @media only screen and(max-width: $bp-md) {
+      justify-self: center;
+    }
   }
 
   &__link {
@@ -69,10 +85,14 @@
     grid-row: 6/7;
 
     display: flex;
-    // justify-content: center;
+
     column-gap: 1.5rem;
 
     margin-top: 2rem;
+
+    @media only screen and(max-width: $bp-md) {
+      justify-content: center;
+    }
   }
 
   &__icon {
@@ -110,12 +130,6 @@
     display: grid;
     align-items: center;
     justify-content: center;
-
-    // &--text {
-    //   color: rgba(#fff, 0.3);
-    //   font-family: "Kristi", cursive;
-    //   font-size: 10rem;
-    // }
   }
 
   // &__bottom {
